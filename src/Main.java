@@ -86,7 +86,7 @@ public class Main {
                 int ordinal = Integer.parseInt(ordinalLine);
                 return Repeatable.values()[ordinal];
             } catch (NumberFormatException e) {
-                System.out.println("Введен неверный номер типа повторяемости задачи");
+                System.out.println("Введен неверный тип повторяемости");
             } catch (ArrayIndexOutOfBoundsException e) {
                 System.out.println("Тип повторяемости не найден");
             }
@@ -140,7 +140,6 @@ public class Main {
                     task.getTitle(),
                     localizeType(task.getTaskType()),
                     localizeRepeatability(task.getRepeatabilityType()));
-
         }
         while (true) {
             try {
@@ -179,7 +178,7 @@ public class Main {
                 String dateLine = scanner.nextLine();
                 return LocalDate.parse(dateLine, DATE_FORMAT);
             } catch (DateTimeParseException e) {
-                System.err.println("Введена дата в неверном формате");
+                System.out.println("Введена дата в неверном формате");
             }
 
         }
@@ -188,11 +187,11 @@ public class Main {
     private static LocalTime readTime(Scanner scanner) {
         while (true) {
             try {
-                System.out.printf("Введите время задачи в формате hh.mm : ");
+                System.out.print("Введите время задачи в формате hh.mm : ");
                 String dateLine = scanner.nextLine();
                 return LocalTime.parse(dateLine, TIME_FORMAT);
             } catch (DateTimeParseException e) {
-                System.err.println("Введено время в неверном формате");
+                System.out.println("Введено время в неверном формате");
             }
 
         }
